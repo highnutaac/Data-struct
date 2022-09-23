@@ -92,6 +92,14 @@ Status ListIntersaction(SqList La,SqList Lb,SqList* Lc){
     return OK;
 }
 
+Status DestoryList(SqList* L){
+    free(L->head);
+    L->listsize=0;
+    L->length=0;
+    L=NULL;
+    return OK;
+}
+
 int main(void){
     SqList* L=(SqList*)malloc(LIST_INIT_SIZE*sizeof(ElemType));// pointer should be init before first use.
     printf("after Init ,the return : %d .\n",InitList(L));
@@ -123,5 +131,6 @@ int main(void){
     TraverseList(*Lb);
     printf("\n\nfinally after ListIntersaction , Lc is :");
     TraverseList(*Lc);
+    DestoryList(L);DestoryList(Lb);DestoryList(Lc);
     return 0;
 }

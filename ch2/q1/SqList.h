@@ -24,6 +24,7 @@ int LocateElem(SqList L,ElemType e,Status (compare(ElemType a,ElemType b)));//Lo
 Status ListInsert(SqList* L,int i,ElemType e);//Insert elem in i index.
 Status TraverseList(SqList L);
 Status ListIntersaction(SqList La,SqList Lb,SqList* Lc);
+Status DestoryList(SqList* L);
 
 
 
